@@ -10,17 +10,18 @@ buildscript {
     }
 
     dependencies {
-        classpath(Libs.com_jfrog_bintray_gradle_bintray_plugin)
+        classpath("com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5")
     }
 }
-apply(plugin = Libs.maven_publish)
+apply(plugin = "maven-publish")
 
 android {
-    compileSdkVersion(AndroidConstants.compileSdkVersions)
+    namespace = "com.github.aachartmodel.aainfographics"
 
+    buildToolsVersion = "33.0.1"
     defaultConfig {
-        minSdkVersion(AndroidConstants.minSdkVersion)
-        targetSdkVersion(AndroidConstants.targetSdkVersion)
+        minSdkVersion(26)
+        targetSdkVersion(33)
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -29,10 +30,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    compileSdk = 33
 }
 
 dependencies {
-    implementation(Libs.gson)
+    implementation("com.google.code.gson:gson:2.8.6")
 }
 
 afterEvaluate {

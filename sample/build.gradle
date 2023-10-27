@@ -3,12 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-
-    compileSdkVersion 28
+    namespace = "com.github.aachartmodel.aainfographics.demo"
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.github.aachartmodel.aainfographics.demo"
-        minSdkVersion 19
+        minSdkVersion 33
         versionCode 1
         versionName "1.0.0"
     }
@@ -25,6 +25,7 @@ android {
             abortOnError false
         }
     }
+    buildToolsVersion '33.0.1'
 }
 
 dependencies {

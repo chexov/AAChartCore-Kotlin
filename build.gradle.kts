@@ -5,14 +5,14 @@ buildscript {
     }
 
     dependencies {
-        classpath(Libs.com_android_tools_build_gradle)
-        classpath(Libs.org_jetbrains_kotlin_kotlin_gradle_plugin)
-        classpath(Libs.com_jfrog_bintray_gradle_bintray_plugin)
+        classpath("com.android.tools.build:gradle:8.1.2")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21")
+        classpath("com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5")
     }
 }
 
 plugins {
-    mavenPublish
+    id("maven-publish")
 }
 
 allprojects {
@@ -37,8 +37,8 @@ tasks.withType<Javadoc> {
 
 //For Groovy build.gradle files
 project.extra.apply {
-    set("minSdkVersion", AndroidConstants.minSdkVersion)
-    set("targetSdkVersion", AndroidConstants.targetSdkVersion)
-    set("compileSdkVersion", AndroidConstants.compileSdkVersions)
-    set("buildToolsVersion", AndroidConstants.buildToolsVersion)
+    set("minSdkVersion", 33)
+    set("targetSdkVersion", 33)
+    set("compileSdkVersion", 33)
+    set("buildToolsVersion", "30.0.2")
 }
